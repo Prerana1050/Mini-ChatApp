@@ -7,7 +7,7 @@ const Chat = require("./models/chat");
 const methodOverride=require("method-override");
 
 app.set("views",path.join(__dirname,"views"));
-app.set("views engine","ejs");
+app.set("view engine","ejs");
 app.use(express.static(path.join(__dirname,"public")));
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
