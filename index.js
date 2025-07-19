@@ -5,6 +5,7 @@ const path=require("path");
 const Chat = require("./models/chat");
 //const Chat=require("./models/chat.js");
 const methodOverride=require("method-override");
+const PORT = process.env.PORT || 8000;
 
 app.set("views",path.join(__dirname,"views"));
 app.set("view engine","ejs");
@@ -95,6 +96,6 @@ app.delete("/chats/:id",async(req,res)=>{
     console.log(deletedchat);
     res.redirect("/chats");
 })
-app.listen(8000,()=>{
-    console.log("server is listening on port 8000");
+app.listen(PORT,()=>{
+    console.log(`server is listening on port ${PORT}`);
 })
